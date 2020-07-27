@@ -19,11 +19,16 @@ module ClientRequest = {
 
   [@bs.get_index] [@bs.scope ("headers")] external getHeader : (t, string) => string = "";
   [@bs.get] external getMethod : t => abs_httpMethod = "method";
+  [@bs.get] external getUrl : t => string = "url";
 
   let getMethod = (response: t) => {
     let method = getMethod(response);
     httpMethodFromJs(method);
   };
+  
+  let getUrl = (request: t) => {
+    getUrl(request);
+  }
 };
 
 module Server = {
