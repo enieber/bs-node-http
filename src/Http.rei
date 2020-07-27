@@ -32,6 +32,14 @@ module ClientRequest: {
    * https://nodejs.org/api/http.html#http_message_method
    */
   let getMethod: t => httpMethod;
+  
+   /**
+   * Get the url of the request (e.g. /, /test, users). Equivalent to
+   * acceessing the `request.url` property.
+   * 
+   * https://nodejs.org/api/http.html#http_message_url
+   */
+  let getUrl: t => string
 };
 
 module Server: {
